@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University</title>
+    <!--main-css-->
+    <link rel="stylesheet" href="style/main.css">
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!--font-awesome-->
+    <link rel="stylesheet" href="assists/font-awesome/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <section class="header-about">
+        <nav>
+            <a href=""><img src="images/uni-logo.jpg" alt=""></a>
+            <div class="nav-link" id="navlink">
+                <i class="fa fa-times" aria-hidden="true" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about-Copy.html">ABOUT</a></li>
+                    <li><a href="courses-Copy.html">COURSES</a></li>
+                    <li><a href="Blogs-Copy.html">BLOGS</a></li>
+                    <li><a href="contact_us-Copy.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true" onclick="showmenu()"></i>
+        </nav>
+        <div class="text">
+            <h1>CONTACT US</h1>
+        </div>
+    </section>
+    <!--section-contact-->
+    <section class="contact">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d877260.1739277331!2d30.532803027343753!3d30.808311080852402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145f53fcf84d54e9%3A0xda42bcf366a0df7e!2zQW4gTnViYXJpeWFoLCDZgtiz2YUg2LrYsdioINin2YTZhtmI2KjYp9ix2YrYqdiMINin2YTYqNit2YrYsdip!5e0!3m2!1sar!2seg!4v1676085181233!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <!--contact_us-->
+    <section class="contact_us">
+        <div class="row">
+            <div class="information">
+                <div>
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span><h5>Egypt,Al Buhayrah,An Nubariyah</h5></span>
+                    <span><p>Egypt,Al Buhayrah,An Nubariyah City</p></span>
+                </div>
+                <div>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span><h5>(+20)1211340937</h5></span>
+                    <span><p>Monday To Saturday</p></span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span><h5>samymahmoud2532001@gmail.com</h5></span>
+                    <span><p>Email Us To Help You.</p></span>
+                </div>
+            </div>
+        </div>
+        <div class="comment-blogs">
+            <h3>Write Your Comment</h3>
+            <form>
+                <input type="text" placeholder="Enter your Name">
+                <input type="email" placeholder="Enter Your Email">
+                <textarea rows="5"></textarea>
+                <button >Post Comment</button>
+            </form>
+        </div>
+    </section>
+    <hr>
+    <!--section-footer-->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum necessitatibus quaerat ex recusandae? Nihil dicta velit, fugit molestias perspiciatis beatae iste esse laudantium a placeat, quos excepturi. Asperiores, sequi optio.
+        </p>
+        <div class="social">
+            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </div>
+        <p>
+            Made By Samy Mahmoud <i class="fa fa-heart-o" aria-hidden="true" style="color: red;"></i> Thank You.
+        </p>
+    </section>
+    <script>
+        var navlink=document.getElementById("navlink");
+        function hidemenu(){
+            navlink.style.right="-200px"
+        }
+        function showmenu(){
+            navlink.style.right="0px"
+        }
+    </script>
+</body>
+</html>
