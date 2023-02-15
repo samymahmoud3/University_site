@@ -30,15 +30,18 @@
             <i class="fa fa-bars" aria-hidden="true" onclick="showmenu()"></i>
         </nav>
         <div class="text">
-            <h1>University Of Creating The Future</h1>
+            <h1>University</h1> <h2 id="hidden">Of Creating The Future</h2>
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi, dolores nihil ratione nam placeat, dolor ab maiores vero libero dignissimos accusamus aliquid a doloribus iure sequi. Qui dolorem quae quis.
             </p>
-            <a href="" class="btn">View More To Know</a>
+            <div id="drop">
+                <a href="#" class="btn"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+            </div>
         </div>
+        <i class="fa fa-chevron-circle-up" aria-hidden="true"></i>
     </section>
     <!--section-courses-->
-    <section class="courses">
+    <section class="courses" id="more">
         <h1>
             Our Courses We Offer
         </h1>
@@ -166,7 +169,7 @@
             <div class="column4">
                 <img src="images/man2.jpg" alt="">
                 <div class="heading3">
-                    <h3>Joo
+                    <h3>Joe
                         <p>
                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum suscipit libero voluptates exercitationem labore ipsum debitis voluptatum. Error dolorem ipsa possimus? Optio magni numquam voluptates adipisci, quasi quod esse! Molestiae?
                         </p>
@@ -176,7 +179,6 @@
                         <i class="fa fa-star" aria-hidden="true"></i>
                         <i class="fa fa-star" aria-hidden="true"></i>
                     </h3>
-                   
                 </div>
             </div>
         </div>
@@ -185,7 +187,7 @@
     <!--section-enroll_contact-->
     <section class="enroll">
         <h1>Enroll For Our Various Courses Anywhere From The World.</h1>
-        <a href="" class="btn">Contact Us</a>
+        <a href="contact_us-Copy.html" class="btn">Contact Us</a>
     </section>
     <hr>
     <!--section-footer-->
@@ -211,6 +213,16 @@
         }
         function showmenu(){
             navlink.style.right="0px"
+        }
+        var scrl=document.querySelector('.fa-chevron-circle-up');
+        window.onscroll=function(){
+            this.scrollY >=700 ? scrl.classList.add('scroll-up') : scrl.classList.remove('scroll-up');
+        }
+        scrl.onclick=function(){
+            window.scrollTo({
+                top:0,
+                behavior:"smooth",
+            });
         }
     </script>
 </body>

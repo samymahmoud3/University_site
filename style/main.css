@@ -8,7 +8,7 @@
 .header{
     width: 100%;
     min-height: 100vh;
-    background-image:linear-gradient(rgba(4,9,30,0.4),rgba(4,9,30,0.4)), url(img/uni-bulding.jpg);
+    background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.4)), url(img/uni-bulding.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,18 +30,15 @@ nav img{
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    transition: 0.7s;
-    -webkit-transition: 0.7s;
-    -moz-transition: 0.7s;
-    -ms-transition: 0.7s;
-    -o-transition: 0.7s;
+    animation-name: round;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
-nav img:hover{
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
+@keyframes round {
+    form{ transform:rotate(-360deg) ; -webkit-transform:rotate(-360deg) ; -moz-transform:rotate(-360deg) ; -ms-transform:rotate(-360deg) ; -o-transform:rotate(-360deg) ; }
+    to{ transform:rotate(360deg) ; -webkit-transform:rotate(360deg) ; -moz-transform:rotate(360deg) ; -ms-transform:rotate(360deg) ; -o-transform:rotate(360deg) ; }
 }
 .nav-link{
     flex: 1;
@@ -98,16 +95,33 @@ nav img:hover{
 }
 .btn{
     color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px 16px;
-    border-bottom: 1px solid white;
+    font-size: 30px;
+    bottom: -100px;
+    position: absolute;
+    padding: 0px 5px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+#drop{
+    animation: drop 3s ease infinite;
+    -webkit-animation: drop 2s ease infinite;
+}
+@keyframes drop {
+    0%{opacity: 0;}
+    70%{ transform:translateY(26px) ; -webkit-transform:translateY(26px) ; -moz-transform:translateY(26px) ; -ms-transform:translateY(26px) ; -o-transform:translateY(26px) ; }
+    100%{
+        transform: translateY(25px);
+        -webkit-transform: translateY(25px);
+        -moz-transform: translateY(25px);
+        -ms-transform: translateY(25px);
+        -o-transform: translateY(25px);
+        opacity: 1;
+}
+}
+
 .btn:hover{
     background: rgba(0, 106, 255);
     border: rgba(0, 106, 255);
@@ -164,6 +178,30 @@ nav .fa{
     .column3{
         margin-bottom: 25px;
     }
+}
+.fa.fa-chevron-circle-up{
+    position: fixed;
+    right: 0px;
+    bottom: 10px;
+    font-size: 38px;
+    color: #00e5ff;
+    margin: 5px 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    opacity: 0;
+    z-index: 1001;
+    cursor: pointer;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+.fa.fa-chevron-circle-up.scroll-up{
+    opacity: 1;
 }
 /*section-courses*/
 .courses{
@@ -346,14 +384,16 @@ img{
     font-weight: 200;
 }
 .student p{
-    font-size: 16px;
+    font-size: small;
     color: #777;
     margin-top: 15px;
+    
 }
 .column4{
     flex-basis: 44%;
+    position: relative;
     display: flex;
-    padding: 25px;
+    padding: 20px;
     text-align: left;
     width: 90%;
     background: rgba(0, 106, 255,0.4);
@@ -362,17 +402,24 @@ img{
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    margin:8px;
+    margin:5px;
     transition: all .6s;
     -webkit-transition: all .6s;
     -moz-transition: all .6s;
     -ms-transition: all .6s;
     -o-transition: all .6s;
+    overflow: hidden;
+    
+}
+@media (max-width:929px){
+   .row{
+    width: 93%;
+   }
 }
 .column4 img{
-    margin: 0 30px 0 10px;
-    width: 50px;
-    height: 50px;
+    margin: 0 10px 0 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
@@ -424,6 +471,18 @@ img{
     }
     .enroll h1{
         font-size: 16px;
+    }
+    .nav-link ul li{
+        left: 0;
+    }
+    .nav-link ul li::after{
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: #777;
+    }
+    .fa.fa-times{
+        margin: 10px 10px;
     }
 }
 /*section-footer*/
@@ -573,37 +632,78 @@ img{
     justify-content: space-between;
     align-items: center;
 }
+/*page-contact_us*/
 .comment-blogs{
     border: 1px solid #777;
     margin: 100px 0;
     padding: 20px;
 }
-form input , form textarea{
+.comment-blogs h3{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background: #f0ecec;
-    margin-top: 20px;
+}
+form input , form textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    background: none;
+    color: #34465D;
+    margin: 20px auto;
     padding: 10px;
-    border: none;
+    border: 2px solid aqua;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transition: 2s ;
+    -webkit-transition: 2s ;
+    -moz-transition: 2s ;
+    -ms-transition: 2s ;
+    -o-transition: 2s ;
+    
+}
+form input:focus{
+    width: 100%;
+    border-color: #0061FF ;
+}
+form textarea:focus{
+    width: 100%;
+    border-color: #0061FF ;
 }
 form button{
-    padding: 10px 20px;
-    margin-top: 20px;
+    padding: 10px;
+    margin: 20px auto;
     color: white;
     cursor: pointer;
     background: rgb(29, 161, 242);
-    border: 1px solid white;
+    border: 0px solid white;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    transition: 1s ;
+    -webkit-transition: 1s ;
+    -moz-transition: 1s ;
+    -ms-transition: 1s ;
+    -o-transition: 1s ;
 }
-
-/*page-contact_us*/
+form button:hover{
+    width: 85%;
+}
 .contact{
     display: flex;
     justify-content: center;
@@ -636,6 +736,7 @@ form button{
     position: relative;
     bottom: 60px;
     left: 35px;
+    margin: 5px 0;
 }
 .information span p{
    color: #777;
