@@ -119,9 +119,8 @@ nav img{
         -ms-transform: translateY(25px);
         -o-transform: translateY(25px);
         opacity: 1;
+    }
 }
-}
-
 .btn:hover{
     background: rgba(0, 106, 255);
     border: rgba(0, 106, 255);
@@ -464,6 +463,13 @@ img{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
    
+}
+.btn-contact{
+    padding: 10px 10px;
+    margin: 20px 0;
+}
+.btn-contact:hover{
+    background: rgb(29, 161, 242);
 }
 @media (max-width:700px){
     .enroll{
