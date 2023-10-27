@@ -73,7 +73,7 @@ nav img{
     width: 100%;
 }
 .text{
-    width: 90%;
+    width: 60%;
     position: absolute;
     text-align: center;
     top: 50%;
@@ -230,6 +230,18 @@ nav .fa{
     top: 75px;
     margin-bottom: 50px;
 }
+@media screen and (min-width: 700px){
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+@media screen and (min-width: 950px){
+    .row {
+        display: flex;
+    }
+}
 .column{
     flex-basis: 31%;
     background: rgba(83, 188, 241, 0.4);
@@ -338,6 +350,7 @@ img{
     position: relative;
     bottom: 50px;
     text-align: center;
+    padding: 1rem;
     overflow: hidden;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -353,6 +366,7 @@ img{
 .column3 img{
     width: 100%;
     min-height: 50vh;
+    height: 400px;
     margin-bottom: 50px;
     opacity: 0.9;
     border-radius: 20px;
@@ -388,6 +402,12 @@ img{
     margin-top: 15px;
     
 }
+.img_profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    
+}
 .column4{
     flex-basis: 44%;
     position: relative;
@@ -409,6 +429,9 @@ img{
     -o-transition: all .6s;
     overflow: hidden;
     
+}
+.heading3 h3 {
+    margin: 5px;
 }
 @media (max-width:929px){
    .row{
